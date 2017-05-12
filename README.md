@@ -20,9 +20,9 @@
 ### 打包平台 [HBuild](http://www.html5plus.org/doc/h5p.html)
 ### css预编译[less](http://less.bootcss.com/)    
 
-              static文件夹主要放一些图片,第三发文件。src中的目录如下：
+              static文件夹主要放一些图片,第三方文件。src中的目录如下：
                 |-- App.vue  
-                |-- components  但文件组件文件夹
+                |-- components  单文件组件文件夹
                 |-- diy         封装的api 接口等
                 |-- main.js     入口文件
                 |-- pages       页面
