@@ -4,6 +4,7 @@
 	</div>
 </template>
 <script>
+	import router from '../../router'
 	export default{
 		name: 'work',
 		data:function(){
@@ -15,7 +16,7 @@
 
 		},
 		methods:{
-
+			
 		}
 	}
 </script>

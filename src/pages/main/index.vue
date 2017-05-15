@@ -1,6 +1,7 @@
 <template>
   <div class="main">
     <div class="compent"><component :is="currentView"></component></div>
+    <p style="font-size:24px;margin-top:200px;text-align:center;" @click="jump">跳转滑屏主页</p>
     <div class="footer">
       <div :class="{active:mainMsgIsActive}"  class="footerNav" @click="pageChange('mainMsg')">
         <p><i class="material-icons">message</i></p>
@@ -57,7 +58,10 @@
           case "mainContacts":this.mainContactsIsActive=true;break;
           case "mainMy":this.mainMyIsActive=true;break;
         }
-      }
+      },
+      jump(){
+				router.push('/mainWorks')
+			}
     }
 	}
 </script>

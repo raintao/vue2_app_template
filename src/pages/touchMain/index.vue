@@ -61,7 +61,7 @@ export default {
     $(".footerNav").click(function(){
       $(this).addClass("active").siblings(".active").removeClass("active");
       var tar=$(this).attr("data-tar");
-      _this.$refs.mySwiper.swiper.slideTo(tar, 1000)
+      _this.$refs.mySwiper.swiper.slideTo(tar, 10)
     });
   },
   methods:{

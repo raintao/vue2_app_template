@@ -4,9 +4,9 @@ import App from '../App'
 
 
 // 主页
-// const mainWork = r => require.ensure([], () => r(require('../pages/main/index.vue')),'mainWork')
+const mainWork = r => require.ensure([], () => r(require('../pages/main/index.vue')),'mainWork')
 //滑屏主页
-const mainWork = r => require.ensure([], () => r(require('../pages/touchMain/index.vue')),'mainWork')
+const mainWorks = r => require.ensure([], () => r(require('../pages/touchMain/index.vue')),'mainWorks')
 
 const routerChild = r => require.ensure([], () => r(require('../components/routerChild.vue')),'routerChild')
 
@@ -16,6 +16,7 @@ const routes = [{
   children:[
     { path: "",redirect:"/mainWork" },
     { path: "/mainWork",component: mainWork},
+    { path: "/mainWorks",component: mainWorks},
     //我的页面 的子路由
     { path: "/mainMy",component:routerChild,
       children:[
