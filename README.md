@@ -34,3 +34,4 @@
 #### 默认配置为基于iphone6的设计稿，1rem=100px,即1px=0.01rem；
 #### 字体、border用px，布局用rem，固定定位的header、footer建议也用px布局；
 #### 另本模版对于mintUI和museUI组件按需引入的webpack已配好，less语法等，对于es6语法不会提醒
+#### [vue2高仿网易云音乐](https://github.com/raintao/musicWebapp.git) <a href="http://levo.hujinlianrong.com/musicWebapp/dist/#/player/rage" target="_blank"> 网页demo</a>
