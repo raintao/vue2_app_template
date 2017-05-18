@@ -3,19 +3,19 @@
     <div class="compent"><component :is="currentView"></component></div>
     <p style="font-size:24px;margin-top:200px;text-align:center;" @click="jump">跳转滑屏主页</p>
     <div class="footer">
-      <div :class="{active:mainMsgIsActive}"  class="footerNav" @click="pageChange('mainMsg')">
+      <div class="footerNav" @click="pageChange($event,'mainMsg')">
         <p><i class="material-icons">message</i></p>
   			<p>消息</p>
       </div>
-      <div :class="{active:mainWorkIsActive}" class="footerNav" @click="pageChange('mainWork')">
+      <div class="footerNav active" @click="pageChange($event,'mainWork')">
         <p><i class="material-icons">work</i></p>
   			<p>工作</p>
       </div>
-      <div :class="{active:mainContactsIsActive}" class="footerNav" @click="pageChange('mainContacts')">
+      <div class="footerNav" @click="pageChange($event,'mainContacts')">
         <p><i class="material-icons">people_outline</i></p>
   			<p>联系人</p>
       </div>
-      <div :class="{active:mainMyIsActive}" class="footerNav" @click="pageChange('mainMy')">
+      <div class="footerNav" @click="pageChange($event,'mainMy')">
         <p><i class="material-icons">person_outline</i></p>
   			<p>我的</p>
       </div>
@@ -32,11 +32,7 @@
 		name: 'maindex',
     data:function(){
         return {
-            currentView:mainWork,
-            mainWorkIsActive:true,
-            mainContactsIsActive:false,
-            mainMyIsActive:false,
-            mainMsgIsActive:false
+            currentView:mainWork
         }
     },
     components:{
@@ -46,18 +42,9 @@
       mainMy
     },
     methods:{
-      pageChange:function(url){
-        this.currentView=url;
-        this.mainWorkIsActive=false;
-        this.mainContactsIsActive=false;
-        this.mainMyIsActive=false;
-        this.mainMsgIsActive=false;
-        switch(url){
-          case "mainWork":this.mainWorkIsActive=true;break;
-          case "mainMsg":this.mainMsgIsActive=true;break;
-          case "mainContacts":this.mainContactsIsActive=true;break;
-          case "mainMy":this.mainMyIsActive=true;break;
-        }
+      pageChange:function(e,url){
+        this.currentView=url
+        $(e.currentTarget).addClass("active").siblings(".active").removeClass("active")
       },
       jump(){
 				router.push('/mainWorks')

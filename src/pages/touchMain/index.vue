@@ -8,19 +8,19 @@
         <!-- <div class="swiper-pagination" slot="pagination"></div> -->
     </swiper>
     <div class="footer">
-      <div class="footerNav" data-tar="0">
+      <div class="footerNav" @click="pageChange($event,0)">
         <p><i class="material-icons">message</i></p>
         <p>消息</p>
       </div>
-      <div class="footerNav active" data-tar="1">
+      <div class="footerNav active" @click="pageChange($event,1)">
         <p><i class="material-icons">work</i></p>
         <p>工作</p>
       </div>
-      <div class="footerNav" data-tar="2">
+      <div class="footerNav" @click="pageChange($event,2)">
         <p><i class="material-icons">people_outline</i></p>
         <p>联系人</p>
       </div>
-      <div class="footerNav" data-tar="3">
+      <div class="footerNav" @click="pageChange($event,3)">
         <p><i class="material-icons">person_outline</i></p>
         <p>我的</p>
       </div>
@@ -57,14 +57,12 @@ export default {
   },
   mounted(){
     $(".swiper-slide>div").css("min-height",document.documentElement.clientHeight+"px");
-    var _this=this;
-    $(".footerNav").click(function(){
-      $(this).addClass("active").siblings(".active").removeClass("active");
-      var tar=$(this).attr("data-tar");
-      _this.$refs.mySwiper.swiper.slideTo(tar, 10)
-    });
   },
   methods:{
+    pageChange(e,number){
+      $(e.currentTarget).addClass("active").siblings(".active").removeClass("active")
+      this.$refs.mySwiper.swiper.slideTo(number, 10)
+    }
   }
 }
 

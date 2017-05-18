@@ -25,7 +25,6 @@ import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css';
 Vue.use(MintUI);
 
-
 // 按需加载
 // muse-ui  base.less加载基础的样式
 // import 'muse-components/styles/base.less'
