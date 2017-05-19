@@ -1,0 +1,21 @@
+body{
+    font-family: "Microsoft YaHei", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    color:#333;
+    font-size: 12px;
+}
+ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd {
+    margin:0;
+    padding:0;
+    border:none;
+    list-style:none;
+}
+*{
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  box-sizing:border-box;
+}
+a{text-decoration:none;color:#333;}
+a:hover,a:focus{text-decoration: none;}
+input,textarea,button{border:none;outline: none;}
+img{vertical-align:middle;}

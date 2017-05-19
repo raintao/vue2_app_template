@@ -8,9 +8,10 @@ Vue.prototype.$http = Axios // 类似于vue-resource的调用方法，之后可�
 
 // 第三方jquery
 import '../static/js/zepto.min.js'
-
 // css reset UI框架里面有了,但是mint-ui沒有
-import './public/reset-min.css'
+import './public/reset.css'
+// 字体图标
+import './public/font/font-awesome.min.css'
 
 // 全部加载ui框架
 

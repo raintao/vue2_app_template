@@ -16,7 +16,7 @@
 #### [官方命令行工具vue-cli](https://github.com/vuejs/vue-cli)  
 ### UI [mnit-ui](http://mint-ui.github.io/docs/#/)   [muse-ui](http://www.muse-ui.org/#/usage)
 ### 交互 [axios](https://www.awesomes.cn/repo/mzabriskie/axios),[github地址](https://github.com/raintao/axios)
-### icon [material icons](https://material.io/icons/#ic_class)
+### icon [material icons](https://material.io/icons/#ic_class) 需要时刻联网，改为[font awesome](http://www.bootcss.com/p/font-awesome/)
 ### 打包平台 [HBuild](http://www.html5plus.org/doc/h5p.html)
 ### css预编译[less](http://less.bootcss.com/)    
 
@@ -26,7 +26,7 @@
                 |-- diy         封装的api 接口等
                 |-- main.js     入口文件
                 |-- pages       页面
-                |-- public      css重置、统一制定主题、样式等css文件
+                |-- public      css重置、统一制定主题、样式等css文件,字体图标
                 |-- router      路由文件
                 |-- store       vuex
 

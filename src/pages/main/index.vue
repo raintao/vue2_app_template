@@ -4,19 +4,19 @@
     <p style="font-size:24px;margin-top:200px;text-align:center;" @click="jump">跳转滑屏主页</p>
     <div class="footer">
       <div class="footerNav" @click="pageChange($event,'mainMsg')">
-        <p><i class="material-icons">message</i></p>
+        <p><i class="icon-comment-alt"></i></p>
   			<p>消息</p>
       </div>
       <div class="footerNav active" @click="pageChange($event,'mainWork')">
-        <p><i class="material-icons">work</i></p>
+        <p><i class="icon-th-large"></i></p>
   			<p>工作</p>
       </div>
       <div class="footerNav" @click="pageChange($event,'mainContacts')">
-        <p><i class="material-icons">people_outline</i></p>
+        <p><i class="icon-group"></i></p>
   			<p>联系人</p>
       </div>
       <div class="footerNav" @click="pageChange($event,'mainMy')">
-        <p><i class="material-icons">person_outline</i></p>
+        <p><i class=" icon-user"></i></p>
   			<p>我的</p>
       </div>
     </div>
@@ -70,18 +70,15 @@
 		.footerNav{
 			flex:1;
 			text-align: center;
-			vertical-align: middle;
 			padding-bottom:8px;
 			color:@fontColor;
-			text-decoration:none;
 			p{
-			  margin-top:5px;
+			  margin-top:8px;
         >i{
           font-size: 18px;
         }
 				&:nth-of-type(2){
-				  margin-top:0;
-					font-size:12px;
+				  margin-top:2px;
           height: 14px;
 				}
 			}

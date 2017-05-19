@@ -9,20 +9,20 @@
     </swiper>
     <div class="footer">
       <div class="footerNav" @click="pageChange($event,0)">
-        <p><i class="material-icons">message</i></p>
-        <p>消息</p>
+        <p><i class="icon-comment-alt"></i></p>
+  			<p>消息</p>
       </div>
       <div class="footerNav active" @click="pageChange($event,1)">
-        <p><i class="material-icons">work</i></p>
-        <p>工作</p>
+        <p><i class="icon-th-large"></i></p>
+  			<p>工作</p>
       </div>
       <div class="footerNav" @click="pageChange($event,2)">
-        <p><i class="material-icons">people_outline</i></p>
-        <p>联系人</p>
+        <p><i class="icon-group"></i></p>
+  			<p>联系人</p>
       </div>
       <div class="footerNav" @click="pageChange($event,3)">
-        <p><i class="material-icons">person_outline</i></p>
-        <p>我的</p>
+        <p><i class=" icon-user"></i></p>
+  			<p>我的</p>
       </div>
     </div>
   </div>
@@ -87,18 +87,15 @@ export default {
 		.footerNav{
 			flex:1;
 			text-align: center;
-			vertical-align: middle;
 			padding-bottom:8px;
 			color:@fontColor;
-			text-decoration:none;
 			p{
-			  margin-top:5px;
+			  margin-top:8px;
         >i{
           font-size: 18px;
         }
 				&:nth-of-type(2){
-				  margin-top:0;
-					font-size:12px;
+				  margin-top:2px;
           height: 14px;
 				}
 			}
