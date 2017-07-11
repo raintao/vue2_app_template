@@ -22,10 +22,48 @@ const routes = [{
       children:[
         {path:'/',component:mainWork},
       ]
+    },
+    { path: "/buyer",component:routerChild,
+      children:[
+        {path:'',component:mainWork,meta:{requiresAuth:true,uid:1}},
+      ]
+    },
+    { path: "/suplier",component:routerChild,
+      children:[
+        {path:'',component:mainWork,meta:{requiresAuth:true,uid:0}},
+      ]
     }
   ]
 }]
 
-export default new Router({
+const router= new Router({
     routes,linkActiveClass:"my-active"
 })
+router.beforeEach((to,from,next)=>{
+  var accessToken=localStorage.getItem('access_toke')
+    if(accessToken){
+      // if(to.path==='/login'||to.path==='/register'||to.path==='/resetPwd'){
+      //   if(user&&user!='null'){
+      //     //console.log("用户信息的cookie存在")
+      //     if(user.user_code == 1){
+      //       next({path:'/main'})
+      //     }else if(user.user_code == 0){
+      //       next({path:'/supplier'})
+      //     }
+      //   }else{
+      //     next()
+      //   }
+      // }else{
+      //   next()
+      // }
+      next()
+    }else{
+      next({
+        path: '/login',
+        query: {redirect: to.fullPath}
+        // 将跳转的路由path作为参数，登录成功后跳转到该路由
+      })
+    }
+}
+
+export default router
