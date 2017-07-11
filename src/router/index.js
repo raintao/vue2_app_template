@@ -5,10 +5,11 @@ import App from '../App'
 
 // 主页
 const index = r => require.ensure([], () => r(require('../pages/main/index.vue')),'index')
-//滑屏主页
-const mainWorks = r => require.ensure([], () => r(require('../pages/touchMain/index.vue')),'mainWorks')
 
 const routerChild = r => require.ensure([], () => r(require('../components/routerChild.vue')),'routerChild')
+//滑屏主页
+// const mainWorks = r => require.ensure([], () => r(require('../pages/touchMain/index.vue')),'mainWorks')
+
 
 Vue.use(Router)
 const routes = [{
@@ -16,7 +17,7 @@ const routes = [{
   children:[
     { path: "",redirect:"/index" },
     { path: "/index",component: index},
-    { path: "/mainWorks",component: mainWorks},
+    // { path: "/mainWorks",component: mainWorks},
     // 采购商
     { path: "/buyer",component:routerChild,
       children:[
