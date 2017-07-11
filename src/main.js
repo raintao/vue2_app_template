@@ -26,7 +26,7 @@ import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.css';
 Vue.use(MintUI);
 
-retina() // 1px 处理方案
+// retina() // 1px 处理方案
 
 
 //滑屏主页

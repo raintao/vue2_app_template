@@ -8,7 +8,7 @@ const index = r => require.ensure([], () => r(require('../pages/main/index.vue')
 
 const routerChild = r => require.ensure([], () => r(require('../components/routerChild.vue')),'routerChild')
 //滑屏主页
-// const mainWorks = r => require.ensure([], () => r(require('../pages/touchMain/index.vue')),'mainWorks')
+const mainWorks = r => require.ensure([], () => r(require('../pages/touchMain/index.vue')),'mainWorks')
 
 
 Vue.use(Router)
@@ -17,17 +17,17 @@ const routes = [{
   children:[
     { path: "",redirect:"/index" },
     { path: "/index",component: index},
-    // { path: "/mainWorks",component: mainWorks},
+    { path: "/mainWorks",component: mainWorks},
     // 采购商
     { path: "/buyer",component:routerChild,
       children:[
-        {path:'',component:mainWork,meta:{requiresAuth:true,uid:1}},
+        {path:'',component:index,meta:{requiresAuth:true,uid:1}},
       ]
     },
     // 供应商
     { path: "/suplier",component:routerChild,
       children:[
-        {path:'',component:mainWork,meta:{requiresAuth:true,uid:0}},
+        {path:'',component:index,meta:{requiresAuth:true,uid:0}},
       ]
     }
   ]
@@ -36,23 +36,23 @@ const routes = [{
 const router= new Router({
     routes,linkActiveClass:"my-active"
 })
-router.beforeEach((to,from,next)=>{
+/**router.beforeEach((to,from,next)=>{
   var accessToken=localStorage.getItem('access_toke')
     if(accessToken){
-      // if(to.path==='/login'||to.path==='/register'||to.path==='/resetPwd'){
-      //   if(user&&user!='null'){
-      //     //console.log("用户信息的cookie存在")
-      //     if(user.user_code == 1){
-      //       next({path:'/main'})
-      //     }else if(user.user_code == 0){
-      //       next({path:'/supplier'})
-      //     }
-      //   }else{
-      //     next()
-      //   }
-      // }else{
-      //   next()
-      // }
+      if(to.path==='/login'||to.path==='/register'||to.path==='/resetPwd'){
+        if(user&&user!='null'){
+          //console.log("用户信息的cookie存在")
+          if(user.user_code == 1){
+            next({path:'/main'})
+          }else if(user.user_code == 0){
+            next({path:'/supplier'})
+          }
+        }else{
+          next()
+        }
+      }else{
+        next()
+      }
       next()
     }else{
       next({
@@ -62,5 +62,5 @@ router.beforeEach((to,from,next)=>{
       })
     }
 })
-
+**/
 export default router
